@@ -1,5 +1,8 @@
 import React from 'react';
 import { BsSearch } from 'react-icons/bs';
+import { RiMessage2Fill } from 'react-icons/ri';
+import { AiFillBell } from 'react-icons/ai';
+import './Topbar.css';
 
 export default function Topbar() {
   return (
@@ -10,7 +13,7 @@ export default function Topbar() {
 
       <div className="center-topbar">
         <div className="search-box">
-          <BsSearch />
+          <BsSearch className="icon1" />
           <input
             type="text"
             className="search-input"
@@ -20,11 +23,17 @@ export default function Topbar() {
       </div>
 
       <div className="right-topbar">
-        <div className="icon">1</div>
-        <div className="icon">2</div>
-      </div>
+        <div className="icon">
+          <RiMessage2Fill />
+          <span className="icon-span">1</span>
+        </div>
+        <div className="icon">
+          <AiFillBell />
+          <span className="icon-span">2</span>
+        </div>
 
-      <img src="/assets/person/1.jpeg" alt="" className="image" />
+        <img src="/assets/person/1.jpeg" alt="" className="image" />
+      </div>
     </div>
   );
 }

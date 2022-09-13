@@ -1,0 +1,63 @@
+.sidebar {
+  flex: 2.5;
+  height: 100vh;
+}
+
+.side-wrap {
+  padding: 90px;
+}
+
+.ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.list-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  padding: 4px 6px;
+  cursor: pointer;
+  box-shadow: 3px 3px 10px 0px #1e83ae;
+  border-radius: 0px;
+  transition: all 0.5s;
+}
+
+.list-item:hover {
+  box-shadow: none;
+  transform: translateY(5px);
+}
+
+.icon {
+  font-size: 35px !important;
+  margin-right: 5px;
+}
+
+.listText {
+  font-size: 20px;
+  font-weight: bold;
+  padding-top: 4px;
+}
+.list-hr {
+  margin: 20px 0;
+}
+.img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 5px;
+  object-fit: cover;
+}
+
+.ur2 {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.friend {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
