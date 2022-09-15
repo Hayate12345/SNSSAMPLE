@@ -4,6 +4,8 @@ import { AiFillHome, AiTwotoneBell, AiTwotoneSetting } from 'react-icons/ai';
 import { BiSearch } from 'react-icons/bi';
 import { MdMessage } from 'react-icons/md';
 import { BsFillBookmarkFill, BsFillPersonFill } from 'react-icons/bs';
+import Friend from '../friend/friend';
+import { Users } from '../../date';
 
 export default function sidebar() {
   return (
@@ -48,20 +50,9 @@ export default function sidebar() {
         <hr className="list-hr" />
 
         <ul className="ur2">
-          <li className="friend">
-            <img src="/assets/person/2.jpeg" alt="" className="img" />
-            <span className="name">Hayate_T</span>
-          </li>
-
-          <li className="friend">
-            <img src="/assets/person/3.jpeg" alt="" className="img" />
-            <span className="name">Hayate_K</span>
-          </li>
-
-          <li className="friend">
-            <img src="/assets/person/4.jpeg" alt="" className="img" />
-            <span className="name">Hayate_H</span>
-          </li>
+          {Users.map((friend) => (
+            <Friend friend={friend} key={friend.id} />
+          ))}
         </ul>
       </div>
     </div>
