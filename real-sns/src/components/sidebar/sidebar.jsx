@@ -6,15 +6,20 @@ import { MdMessage } from 'react-icons/md';
 import { BsFillBookmarkFill, BsFillPersonFill } from 'react-icons/bs';
 import Friend from '../friend/friend';
 import { Users } from '../../date';
+import { Link } from 'react-router-dom';
 
-export default function sidebar() {
+export default function Sidebar() {
   return (
     <div className="sidebar">
       <div className="side-wrap">
         <ul className="ul">
           <li className="list-item">
             <AiFillHome className="icon" />
-            <span className="listText">ホーム</span>
+
+            {/* 画面遷移toでエンドポイントを指定する */}
+            <Link to="/" style={{ textDecoration: 'none', color: 'black' }}>
+              <span className="listText">ホーム</span>
+            </Link>
           </li>
 
           <li className="list-item">
@@ -39,7 +44,12 @@ export default function sidebar() {
 
           <li className="list-item">
             <BsFillPersonFill className="icon" />
-            <span className="listText">プロフィール</span>
+            <Link
+              to="/profile:username"
+              style={{ textDecoration: 'none', color: 'black' }}
+            >
+              <span className="listText">プロフィール</span>
+            </Link>
           </li>
 
           <li className="list-item">

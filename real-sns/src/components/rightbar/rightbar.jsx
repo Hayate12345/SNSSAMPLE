@@ -4,6 +4,7 @@ import { Users } from '../../date';
 import Online from '../online/online';
 
 export default function rightbar({ Profile }) {
+  const PUBLIC_FOLDER = process.env.REACT_APP_PUBLIC_FOLDER;
   // homeの場合はこの値を返す
   const HomeReightbar = () => {
     return (
@@ -60,7 +61,7 @@ export default function rightbar({ Profile }) {
           <div className="rightbarFollowings">
             <div className="rightbarFollowing">
               <img
-                src="./assets/person/1.jpeg"
+                src={PUBLIC_FOLDER + '/person/1.jpeg'}
                 alt=""
                 className="rightbarFollowingImg"
               />
@@ -68,7 +69,7 @@ export default function rightbar({ Profile }) {
             </div>
             <div className="rightbarFollowing">
               <img
-                src="./assets/person/2.jpeg"
+                src={PUBLIC_FOLDER + '/person/2.jpeg'}
                 alt=""
                 className="rightbarFollowingImg"
               />
@@ -76,7 +77,7 @@ export default function rightbar({ Profile }) {
             </div>
             <div className="rightbarFollowing">
               <img
-                src="./assets/person/3.jpeg"
+                src={PUBLIC_FOLDER + '/person/3.jpeg'}
                 alt=""
                 className="rightbarFollowingImg"
               />
@@ -84,7 +85,7 @@ export default function rightbar({ Profile }) {
             </div>
             <div className="rightbarFollowing">
               <img
-                src="./assets/person/4.jpeg"
+                src={PUBLIC_FOLDER + '/person/4.jpeg'}
                 alt=""
                 className="rightbarFollowingImg"
               />
@@ -92,7 +93,7 @@ export default function rightbar({ Profile }) {
             </div>
             <div className="rightbarFollowing">
               <img
-                src="./assets/person/5.jpeg"
+                src={PUBLIC_FOLDER + '/person/5.jpeg'}
                 alt=""
                 className="rightbarFollowingImg"
               />

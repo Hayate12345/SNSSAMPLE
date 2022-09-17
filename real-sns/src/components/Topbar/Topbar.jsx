@@ -3,12 +3,15 @@ import { BsSearch } from 'react-icons/bs';
 import { RiMessage2Fill } from 'react-icons/ri';
 import { AiFillBell } from 'react-icons/ai';
 import './Topbar.css';
+import { Link } from 'react-router-dom';
 
 export default function Topbar() {
   return (
     <div className="topbar">
       <div className="left-topbar">
-        <span className="logo">Real SNS</span>
+        <Link to="/" style={{ textDecoration: 'none', color: 'black' }}>
+          <span className="logo">Real SNS</span>
+        </Link>
       </div>
 
       <div className="center-topbar">
