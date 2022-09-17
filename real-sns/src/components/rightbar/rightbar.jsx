@@ -3,14 +3,15 @@ import './rightbar.css';
 import { Users } from '../../date';
 import Online from '../online/online';
 
-export default function rightbar({ Profile }) {
+export default function rightbar({ user }) {
   const PUBLIC_FOLDER = process.env.REACT_APP_PUBLIC_FOLDER;
+
   // homeの場合はこの値を返す
   const HomeReightbar = () => {
     return (
       <>
         <div className="content">
-          <img src="/assets/star.png" className="starImg" alt="" />
+          <img src={PUBLIC_FOLDER + '/star.png'} className="starImg" alt="" />
           <span className="eventText">
             <b>フォロワー限定</b>イベント開催中！
           </span>
@@ -25,21 +26,21 @@ export default function rightbar({ Profile }) {
 
         <p className="promotion">プロモーション広告</p>
         <img
-          src="/assets/promotion/promotion1.jpeg"
+          src={PUBLIC_FOLDER + '/promotion/promotion1.jpeg'}
           alt=""
           className="promotionImg"
         />
         <p className="promotionText">ショッピング</p>
 
         <img
-          src="/assets/promotion/promotion2.jpeg"
+          src={PUBLIC_FOLDER + '/promotion/promotion2.jpeg'}
           alt=""
           className="promotionImg"
         />
         <p className="promotionText">カーショッピング</p>
 
         <img
-          src="/assets/promotion/promotion3.jpeg"
+          src={PUBLIC_FOLDER + '/promotion/promotion3.jpeg'}
           alt=""
           className="promotionImg"
         />
@@ -108,7 +109,7 @@ export default function rightbar({ Profile }) {
   return (
     <div className="rightbar">
       <div className="wrap">
-        {Profile ? <ProflileRightbar /> : <HomeReightbar />}
+        {user ? <ProflileRightbar /> : <HomeReightbar />}
       </div>
     </div>
   );

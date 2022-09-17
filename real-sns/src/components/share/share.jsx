@@ -6,12 +6,17 @@ import { MdFace } from 'react-icons/md';
 
 import { GoGraph } from 'react-icons/go';
 
-export default function share() {
+export default function Share() {
+  const PUBLIC_FOLDER = process.env.REACT_APP_PUBLIC_FOLDER;
   return (
     <div className="share">
       <div className="warp">
         <div className="shareTop">
-          <img src="/assets/person/1.jpeg" alt="" className="img" />
+          <img
+            src={PUBLIC_FOLDER + '/person/noAvatar.png'}
+            alt=""
+            className="img"
+          />
           <input type="text" className="input" placeholder="今、どうしてる？" />
         </div>
         <hr />

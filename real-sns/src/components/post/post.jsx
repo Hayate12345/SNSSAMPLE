@@ -3,9 +3,12 @@ import './post.css';
 import { AiOutlineMore } from 'react-icons/ai';
 import axios from 'axios';
 import { format } from 'timeago.js';
+import { Link } from 'react-router-dom';
 
 // ファンクションの後の単語小文字はNG
 export default function Post({ postDate }) {
+  const PUBLIC_FOLDER = process.env.REACT_APP_PUBLIC_FOLDER;
+
   // Dbから取得した情報を格納する変数 配列ではなくてオブジェクト
   const [user, setUser] = useState({});
 
@@ -16,14 +19,14 @@ export default function Post({ postDate }) {
       // timelineはgetメソッドで取得できたよね
       const response = await axios.get(
         // エンドポイントを指定して取得する 投稿した人のユーザーIDを取得
-        `/user/${postDate.userId}`
+        `/user?userId=${postDate.userId}`
       );
-      console.log(response);
+      // console.log(response);
       // 変数に格納 .data必要
       setUser(response.data);
     };
     async();
-    // postDate.userIdなぜ必要なのか
+    // postDate.userIdなぜ必要なのか　リロード時の読み込み
   }, [postDate.userId]);
 
   // いいね機能の作成 Lengthの追加でDbから数をカウント
@@ -43,10 +46,14 @@ export default function Post({ postDate }) {
       <div className="wrap">
         <div className="postTop">
           <div className="postLeft">
-            <img
-              src={user.profilePicture || './assets/person/noAvatar.png'}
-              alt=""
-            />
+            <Link to={`/profile/${user.username}`}>
+              <img
+                src={
+                  user.profilePicture || PUBLIC_FOLDER + '/person/noAvatar.png'
+                }
+                alt=""
+              />
+            </Link>
             <span className="userName">
               {/* 投稿のカラムからユーザーIDを取得 -> ユーザー名を出力 */}
               {user.username}
